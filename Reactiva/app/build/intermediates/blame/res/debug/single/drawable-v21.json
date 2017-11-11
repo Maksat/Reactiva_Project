@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    }
+]

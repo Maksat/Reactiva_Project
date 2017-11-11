@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/negative_valence.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/negative_valence.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/eye_closure.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/eye_closure.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/brow_furrow.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/brow_furrow.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/lip_corner_depressor.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/lip_corner_depressor.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/attention.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/attention.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/lip_press.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/lip_press.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/disgust.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/disgust.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/valence.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/valence.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/smile.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/smile.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/fear.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/fear.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/sadness.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/sadness.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/surprise.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/surprise.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/contempt.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/contempt.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/nose_wrinkle.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/nose_wrinkle.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/lip_suck.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/lip_suck.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/brow_raise.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/brow_raise.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/mouth_open.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/mouth_open.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/engagement.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/engagement.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/joy.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/joy.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/anger.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/anger.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/inner_brow_raise.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/inner_brow_raise.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/chin_raise.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/chin_raise.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/upper_lip_raise.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/upper_lip_raise.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/lip_pucker.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/lip_pucker.jpg"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-nodpi-v4/smirk.jpg",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-nodpi/smirk.jpg"
+    }
+]

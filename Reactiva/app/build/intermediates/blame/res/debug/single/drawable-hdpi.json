@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-hdpi/settings_button_pressed.png",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-hdpi/settings_button_pressed.png"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-hdpi/switch_camera_button.png",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-hdpi/switch_camera_button.png"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-hdpi/switch_camera_button_pressed.png",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-hdpi/switch_camera_button_pressed.png"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-hdpi/screenshot_button_pressed.png",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-hdpi/screenshot_button_pressed.png"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_arrow_back_white_24dp.png",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-hdpi/ic_arrow_back_white_24dp.png"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-hdpi/reactiva_logo_clear_background.png",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-hdpi/reactiva_logo_clear_background.png"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-hdpi/screenshot_button.png",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-hdpi/screenshot_button.png"
+    },
+    {
+        "merged": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/res/merged/debug/drawable-hdpi/settings_button.png",
+        "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/drawable-hdpi/settings_button.png"
+    }
+]

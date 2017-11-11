@@ -1,0 +1,167 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-56:12
+	package
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:4:5-33
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.CAMERA
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:6:5-65
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:6:22-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:7:22-78
+uses-permission#android.permission.INTERNET
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:8:5-66
+MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.android/build-cache/f1200e77ab60cd505727c743cd58becfdd002a53/output/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:8:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:9:5-78
+MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.android/build-cache/f1200e77ab60cd505727c743cd58becfdd002a53/output/AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:9:22-76
+uses-feature#android.hardware.camera
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:11:5-13:36
+	android:required
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:12:9-47
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:14:5-16:36
+	android:required
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:16:9-33
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:15:9-57
+uses-feature#android.hardware.camera.front
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:17:5-19:36
+	android:required
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:19:9-33
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:18:9-53
+application
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:21:5-55:19
+MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.android/build-cache/f1200e77ab60cd505727c743cd58becfdd002a53/output/AndroidManifest.xml:14:5-17:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] /Users/maksat/.android/build-cache/5eadaa7835df2b800efb0a19b1fba5ecbc51efbd/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/maksat/.android/build-cache/602573a4e76f9f2b532e33d84a820ec7330abe40/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/maksat/.android/build-cache/f05eb6ed0c6ee28518d9c222714f16445847c445/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/maksat/.android/build-cache/eb764d3e4e3ac5b37123926e0942f7ab2ace0038/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/maksat/.android/build-cache/2e5f4babffb6429fc39bd8d5db540adeb324a2d1/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/maksat/.android/build-cache/680e452589a81907c41987666b8ec8228ddf097b/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maksat/.android/build-cache/5740c1f27055d83c1efc0bb66b6d40c5f3559bef/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /Users/maksat/.android/build-cache/14fdf6619e7fed9ba74331412b62404e5589301f/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/maksat/.android/build-cache/3fbde01dab6868b7b88a6e56e68952662e4073d4/output/AndroidManifest.xml:9:5-20
+	android:label
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:27:9-41
+		REJECTED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.android/build-cache/f1200e77ab60cd505727c743cd58becfdd002a53/output/AndroidManifest.xml:16:9-47
+	android:hardwareAccelerated
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:25:9-43
+	android:allowBackup
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:24:9-36
+		REJECTED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.android/build-cache/f1200e77ab60cd505727c743cd58becfdd002a53/output/AndroidManifest.xml:15:9-35
+	android:icon
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:26:9-43
+	tools:replace
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:22:9-58
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:23:9-66
+activity#com.nanxi.reactiva.MainActivity
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:28:9-37:20
+	android:label
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:31:13-45
+	android:configChanges
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:30:13-74
+	android:theme
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:32:13-53
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:29:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:33:13-36:29
+action#android.intent.action.MAIN
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:34:17-69
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:34:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:35:17-77
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:35:27-74
+activity#com.nanxi.reactiva.SettingsActivity
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:38:9-45:20
+	android:parentActivityName
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:40:13-55
+	android:theme
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:41:13-56
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:39:13-45
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:42:13-44:67
+	android:value
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:44:17-64
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:43:17-63
+activity#com.nanxi.errorreporting.ErrorReporter
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:46:9-54:20
+	android:textAppearance
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:48:13-73
+	android:theme
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:49:13-63
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:47:13-66
+intent-filter#android.intent.category.DEFAULT+com.affectiva.REPORT_ERROR
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:50:13-53:29
+action#com.affectiva.REPORT_ERROR
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:51:17-69
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:51:25-66
+category#android.intent.category.DEFAULT
+ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:52:17-76
+	android:name
+		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:52:27-73
+uses-sdk
+INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.android/build-cache/f1200e77ab60cd505727c743cd58becfdd002a53/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] /Users/maksat/.android/build-cache/5eadaa7835df2b800efb0a19b1fba5ecbc51efbd/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/maksat/.android/build-cache/602573a4e76f9f2b532e33d84a820ec7330abe40/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/maksat/.android/build-cache/f05eb6ed0c6ee28518d9c222714f16445847c445/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/maksat/.android/build-cache/eb764d3e4e3ac5b37123926e0942f7ab2ace0038/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/maksat/.android/build-cache/2e5f4babffb6429fc39bd8d5db540adeb324a2d1/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/maksat/.android/build-cache/680e452589a81907c41987666b8ec8228ddf097b/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maksat/.android/build-cache/5740c1f27055d83c1efc0bb66b6d40c5f3559bef/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] /Users/maksat/.android/build-cache/14fdf6619e7fed9ba74331412b62404e5589301f/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/maksat/.android/build-cache/3fbde01dab6868b7b88a6e56e68952662e4073d4/output/AndroidManifest.xml:5:5-7:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] /Users/maksat/.android/build-cache/5eadaa7835df2b800efb0a19b1fba5ecbc51efbd/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/maksat/.android/build-cache/602573a4e76f9f2b532e33d84a820ec7330abe40/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/maksat/.android/build-cache/f05eb6ed0c6ee28518d9c222714f16445847c445/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/maksat/.android/build-cache/eb764d3e4e3ac5b37123926e0942f7ab2ace0038/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/maksat/.android/build-cache/2e5f4babffb6429fc39bd8d5db540adeb324a2d1/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/maksat/.android/build-cache/680e452589a81907c41987666b8ec8228ddf097b/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maksat/.android/build-cache/5740c1f27055d83c1efc0bb66b6d40c5f3559bef/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] /Users/maksat/.android/build-cache/14fdf6619e7fed9ba74331412b62404e5589301f/output/AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.android/build-cache/d5df8c0a43d712dcc594019bc67859349cfffa7b/output/AndroidManifest.xml:26:9-47
