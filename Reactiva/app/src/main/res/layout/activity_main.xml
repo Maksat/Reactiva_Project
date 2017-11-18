@@ -10,7 +10,7 @@
     android:keepScreenOn="true"
     tools:context=".MainActivity">
 
-    <SurfaceView
+    <com.nanxi.reactiva.CameraView
         android:id="@+id/camera_preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,41 +58,9 @@
         android:scaleType="fitCenter"
         android:src="@drawable/camera_button_selector" />
 
-    <ImageButton
-        android:id="@+id/screenshot_button"
-        android:layout_width="@dimen/settings_button_size"
-        android:layout_height="@dimen/settings_button_size"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/camera_button"
-        android:layout_margin="@dimen/settings_button_margin"
-        android:background="@null"
-        android:contentDescription="Take screenshot"
-        android:onClick="takeScreenshot"
-        android:scaleType="fitCenter"
-        android:src="@drawable/screenshot_button_selector" />
-
-    <Button
-        android:id="@+id/popup_button"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:bottomRightRadius="2dp"
-        android:bottomLeftRadius="2dp"
-        android:topLeftRadius="2dp"
-        android:topRightRadius="2dp"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/screenshot_button"
-        android:layout_margin="7dp"
-        android:layout_marginTop="54dp"
-        android:background="@color/affectiva_orange"
-        android:scaleType="fitCenter"
-        android:contentDescription="Change stimuli picture"
-        android:onClick="showSimplePopUp"
-        android:text="Go" />
-
     <include layout="@layout/insufficent_permissions_panel" />
+
+
 
     <RelativeLayout
         android:id="@+id/progress_bar_cover"
@@ -131,7 +99,13 @@
             android:textColor="#CCCCCC"
             android:textSize="20sp"
             android:visibility="gone" />
-
     </RelativeLayout>
+    <com.androidadvance.androidsurvey.widgets.NoSwipeViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="visible" />
+
 </RelativeLayout>
 

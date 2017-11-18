@@ -9,14 +9,6 @@
     android:background="@color/transparent_overlay"
     android:paddingBottom="@dimen/bottom_padding"
     >
-    <!-- Logo-->
-    <ImageView
-        android:layout_height="wrap_content"
-        android:layout_width="@dimen/logo_width"
-        android:layout_centerInParent="true"
-        android:src="@drawable/reactiva_logo_clear_background"
-        android:contentDescription="@string/reactiva_logo_content_description"
-        android:id="@+id/reactiva_logo" />
     <!-- Left MetricsManager-->
     <LinearLayout
         android:orientation="vertical"

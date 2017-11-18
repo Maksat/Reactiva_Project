@@ -1,4 +1,0 @@
-#Wed Oct 25 01:08:22 MYT 2017
-base.0=/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
-renamed.0=classes.dex
-file.0=/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

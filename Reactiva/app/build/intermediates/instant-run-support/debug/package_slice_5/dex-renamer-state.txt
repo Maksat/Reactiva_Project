@@ -1,4 +1,4 @@
-#Wed Oct 25 00:57:17 MYT 2017
-base.0=/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_5
+#Sat Nov 18 20:45:52 MYT 2017
+base.0=/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/transforms/dexMerger/debug/6
 renamed.0=classes.dex
-file.0=/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_5/classes.dex
+file.0=/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/transforms/dexMerger/debug/6/classes.dex

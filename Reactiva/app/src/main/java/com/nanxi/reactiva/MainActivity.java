@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2016 Affectiva Inc.
  * See the file license.txt for copying permission.
  */
@@ -17,21 +17,20 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -47,6 +46,7 @@ import com.affectiva.android.affdex.sdk.Frame;
 import com.affectiva.android.affdex.sdk.detector.CameraDetector;
 import com.affectiva.android.affdex.sdk.detector.Detector;
 import com.affectiva.android.affdex.sdk.detector.Face;
+import com.androidadvance.androidsurvey.SurveyActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +56,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends SurveyActivity
         implements Detector.FaceListener, Detector.ImageListener, CameraDetector.CameraEventListener,
         View.OnTouchListener, ActivityCompat.OnRequestPermissionsResultCallback, DrawingView.DrawingThreadEventListener {
 
@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity
     private static final String LOG_TAG = "Reactiva";
     private static final int CAMERA_PERMISSIONS_REQUEST = 42;  //value is arbitrary (between 0 and 255)
     private static final int EXTERNAL_STORAGE_PERMISSIONS_REQUEST = 73;
+    private static final int SURVEY_REQUEST = 1337;
+
     int cameraPreviewWidth = 0;
     int cameraPreviewHeight = 0;
     CameraDetector.CameraType cameraType;
@@ -74,6 +76,7 @@ public class MainActivity extends AppCompatActivity
     private boolean storagePermissionsAvailable = false;
     private CameraDetector detector = null;
     private RelativeLayout metricViewLayout;
+    private ViewPager surveyPager;
     private LinearLayout leftMetricsLayout;
     private LinearLayout rightMetricsLayout;
     private MetricDisplay[] metricDisplays;
@@ -85,13 +88,12 @@ public class MainActivity extends AppCompatActivity
     private RelativeLayout mainLayout; //layout, to be resized, containing all UI elements
     private RelativeLayout progressBarLayout; //layout used to show progress circle while camera is starting
     private LinearLayout permissionsUnavailableLayout; //layout used to notify the user that not enough permissions have been granted to use the app
-    private SurfaceView cameraView; //SurfaceView used to display camera images
+    private CameraView cameraView; //SurfaceView used to display camera images
     private DrawingView drawingView; //SurfaceView containing its own thread, used to draw facial tracking dots
     private ImageButton settingsButton;
     private ImageButton cameraButton;
-    private ImageButton screenshotButton;
-    private Button popUpButton;
     private Frame mostRecentFrame;
+    private boolean isCameraVisible = false;
     private boolean isMenuVisible = false;
     private boolean isFPSVisible = false;
     private boolean isMenuShowingForFirstTime = true;
@@ -113,16 +115,7 @@ public class MainActivity extends AppCompatActivity
         checkForCameraPermissions();
         determineCameraAvailability();
         initializeCameraDetector();
-        //AddData();
-
-        Button showPopUpButton = (Button) findViewById(R.id.popup_button);
-        showPopUpButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                showSimplePopUp();
-            }
-        });
+        initializePager();
     }
 
     /**
@@ -189,8 +182,6 @@ public class MainActivity extends AppCompatActivity
                 // No explanation needed, we can request the permission.
                 requestStoragePermissions();
             }
-        } else {
-            takeScreenshot(screenshotButton);
         }
     }
 
@@ -249,10 +240,10 @@ public class MainActivity extends AppCompatActivity
                 }
             }
 
-            if (storagePermissionsAvailable) {
-                // resume taking the screenshot
-                takeScreenshot(screenshotButton);
-            }
+//            if (storagePermissionsAvailable) {
+//                // resume taking the screenshot
+//
+//            }
         }
 
     }
@@ -332,17 +323,16 @@ public class MainActivity extends AppCompatActivity
         progressBarLayout = (RelativeLayout) findViewById(R.id.progress_bar_cover);
         permissionsUnavailableLayout = (LinearLayout) findViewById(R.id.permissionsUnavialableLayout);
         metricViewLayout = (RelativeLayout) findViewById(R.id.metric_view_group);
+        surveyPager = (ViewPager) findViewById(R.id.pager);
         leftMetricsLayout = (LinearLayout) findViewById(R.id.left_metrics);
         rightMetricsLayout = (LinearLayout) findViewById(R.id.right_metrics);
         mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         fpsPct = (TextView) findViewById(R.id.fps_value);
         fpsName = (TextView) findViewById(R.id.fps_name);
-        cameraView = (SurfaceView) findViewById(R.id.camera_preview);
+        cameraView = (CameraView) findViewById(R.id.camera_preview);
         drawingView = (DrawingView) findViewById(R.id.drawing_view);
         settingsButton = (ImageButton) findViewById(R.id.settings_button);
         cameraButton = (ImageButton) findViewById(R.id.camera_button);
-        screenshotButton = (ImageButton) findViewById(R.id.screenshot_button);
-        popUpButton = (Button) findViewById(R.id.popup_button);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         pleaseWaitTextView = (TextView) findViewById(R.id.please_wait_textview);
         Button retryPermissionsButton = (Button) findViewById(R.id.retryPermissionsButton);
@@ -383,7 +373,7 @@ public class MainActivity extends AppCompatActivity
         leftMetricsLayout.setAlpha(0);
         rightMetricsLayout.setAlpha(0);
 
-        /**
+        /*
          * This app uses two SurfaceView objects: one to display the camera image and the other to draw facial tracking dots.
          * Since we want the tracking dots to appear over the camera image, we use SurfaceView.setZOrderMediaOverlay() to indicate that
          * cameraView represents our 'media', and drawingView represents our 'overlay', so that Android will render them in the
@@ -429,6 +419,7 @@ public class MainActivity extends AppCompatActivity
          * that view will be painted with what the camera sees.
          */
         detector = new CameraDetector(this, cameraType, cameraView, (multiFaceModeEnabled ? MAX_SUPPORTED_FACES : 1), Detector.FaceDetectorMode.LARGE_FACES);
+        detector.setMaxProcessRate(10.f);
         detector.setImageListener(this);
         detector.setFaceListener(this);
         detector.setOnCameraEventListener(this);
@@ -489,26 +480,37 @@ public class MainActivity extends AppCompatActivity
             setFPSVisible(false);
         }
 
-        if (sharedPreferences.getBoolean("track", drawingView.getDrawPointsEnabled())) {  //restore isTrackingDotsVisible
-            setTrackPoints(true);
+        if (sharedPreferences.getBoolean("cam", isCameraVisible)) {    //restore isCameraVisible
+            setCameraVisible(true);
         } else {
+            setCameraVisible(false);
             setTrackPoints(false);
-        }
-
-        if (sharedPreferences.getBoolean("appearance", drawingView.getDrawAppearanceMarkersEnabled())) {
-            detector.setDetectAllAppearances(true);
-            setShowAppearance(true);
-        } else {
-            detector.setDetectAllAppearances(false);
             setShowAppearance(false);
+            setShowEmoji(false);
         }
 
-        if (sharedPreferences.getBoolean("emoji", drawingView.getDrawEmojiMarkersEnabled())) {
-            detector.setDetectAllEmojis(true);
-            setShowEmoji(true);
-        } else {
-            detector.setDetectAllEmojis(false);
-            setShowEmoji(false);
+        if(isCameraVisible) {
+            if (sharedPreferences.getBoolean("track", drawingView.getDrawPointsEnabled())) {  //restore isTrackingDotsVisible
+                setTrackPoints(true);
+            } else {
+                setTrackPoints(false);
+            }
+
+            if (sharedPreferences.getBoolean("appearance", drawingView.getDrawAppearanceMarkersEnabled())) {
+                detector.setDetectAllAppearances(true);
+                setShowAppearance(true);
+            } else {
+                detector.setDetectAllAppearances(false);
+                setShowAppearance(false);
+            }
+
+            if (sharedPreferences.getBoolean("emoji", drawingView.getDrawEmojiMarkersEnabled())) {
+                detector.setDetectAllEmojis(true);
+                setShowEmoji(true);
+            } else {
+                detector.setDetectAllEmojis(false);
+                setShowEmoji(false);
+            }
         }
 
         //populate metric displays
@@ -680,7 +682,7 @@ public class MainActivity extends AppCompatActivity
                 updateMetricScore(metricDisplay, faces.get(0));
             }
 
-            /**
+            /*
              * If the user has selected to have any facial attributes drawn, we use face.getFacePoints() to send those points
              * to our drawing thread and also inform the thread what the valence score was, as that will determine the color
              * of the bounding box.
@@ -698,20 +700,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void takeScreenshot(View view) {
-        // Check the permissions to see if we are allowed to save the screenshot
-        if (!storagePermissionsAvailable) {
-            checkForStoragePermissions();
-            return;
-        }
-
-        drawingView.requestBitmap();
-
-        /**
-         * A screenshot of the drawing view is generated and processing continues via the callback
-         * onBitmapGenerated() which calls processScreenshot().
-         */
-    }
 
     private void processScreenshot(Bitmap drawingViewBitmap, boolean alsoSaveRaw) {
         if (mostRecentFrame == null) {
@@ -840,7 +828,7 @@ public class MainActivity extends AppCompatActivity
         long currentTime = SystemClock.elapsedRealtime();
         if (currentTime > timeToUpdate) {
             float framesPerSecond = (numberOfFrames / (float) (currentTime - firstSystemTime)) * 1000f;
-            fpsPct.setText(String.format(" %.1f", framesPerSecond));
+            fpsPct.setText(String.format(Locale.getDefault(), " %.1f", framesPerSecond));
             timeToUpdate = currentTime + 1000L;
         }
     }
@@ -885,8 +873,6 @@ public class MainActivity extends AppCompatActivity
         if (b) {
             settingsButton.setVisibility(View.VISIBLE);
             cameraButton.setVisibility(View.VISIBLE);
-            screenshotButton.setVisibility(View.VISIBLE);
-            popUpButton.setVisibility(View.VISIBLE);
 
             //We display the navigation bar again
             getWindow().getDecorView().setSystemUiVisibility(
@@ -904,8 +890,6 @@ public class MainActivity extends AppCompatActivity
                             | View.SYSTEM_UI_FLAG_FULLSCREEN);
             settingsButton.setVisibility(View.INVISIBLE);
             cameraButton.setVisibility(View.INVISIBLE);
-            screenshotButton.setVisibility(View.INVISIBLE);
-            popUpButton.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -947,11 +931,54 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    void setCameraVisible(boolean b) {
+        isCameraVisible = b;
+        cameraView.setVisible(b);
+
+        android.view.ViewGroup.LayoutParams lp = cameraView.getLayoutParams();
+
+        if(b)
+        {
+            int newWidth;
+            int newHeight;
+
+            //Get the screen width and height, and calculate the new app width/height based on the surfaceview aspect ratio.
+            DisplayMetrics displaymetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+            int layoutWidth = displaymetrics.widthPixels;
+            int layoutHeight = displaymetrics.heightPixels;
+
+            if (cameraPreviewWidth == 0 || cameraPreviewHeight == 0 || layoutWidth == 0 || layoutHeight == 0)
+                return;
+
+            float layoutAspectRatio = (float) layoutWidth / layoutHeight;
+            float cameraPreviewAspectRatio = (float) cameraPreviewWidth / cameraPreviewHeight;
+
+
+            if (cameraPreviewAspectRatio > layoutAspectRatio) {
+                newWidth = layoutWidth;
+                newHeight = (int) (layoutWidth / cameraPreviewAspectRatio);
+            } else {
+                newWidth = (int) (layoutHeight * cameraPreviewAspectRatio);
+                newHeight = layoutHeight;
+            }
+            lp.width = newWidth;
+            lp.height = newHeight;
+        }else
+        {
+            lp.width = 1;
+            lp.height = 1;
+        }
+        drawingView.setVisibility(b?View.VISIBLE:View.INVISIBLE);
+        cameraView.setLayoutParams(lp);
+    }
+
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             setMenuVisible(!isMenuVisible);
         }
+
         return false;
     }
 
@@ -974,6 +1001,9 @@ public class MainActivity extends AppCompatActivity
         mainLayout.post(new Runnable() {
             @Override
             public void run() {
+                int newWidth;
+                int newHeight;
+
                 //Get the screen width and height, and calculate the new app width/height based on the surfaceview aspect ratio.
                 DisplayMetrics displaymetrics = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
@@ -986,8 +1016,6 @@ public class MainActivity extends AppCompatActivity
                 float layoutAspectRatio = (float) layoutWidth / layoutHeight;
                 float cameraPreviewAspectRatio = (float) cameraPreviewWidth / cameraPreviewHeight;
 
-                int newWidth;
-                int newHeight;
 
                 if (cameraPreviewAspectRatio > layoutAspectRatio) {
                     newWidth = layoutWidth;
@@ -1051,55 +1079,6 @@ public class MainActivity extends AppCompatActivity
             preferencesEditor.apply();
         }
     }
-    protected final static int getResourceID
-            (final String resName, final String resType, final Context ctx)
-    {
-        final int ResourceID =
-                ctx.getResources().getIdentifier(resName, resType,
-                        ctx.getApplicationInfo().packageName);
-        if (ResourceID == 0)
-        {
-            throw new IllegalArgumentException
-                    (
-                            "No resource string found with name " + resName
-                    );
-        }
-        else
-        {
-            return ResourceID;
-        }
-    }
-
-    public void showSimplePopUp() {
-
-
-
-        AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = getLayoutInflater();
-        View checkboxLayout = inflater.inflate(R.layout.image_view, null);
-        helpBuilder.setView(checkboxLayout);
-
-        //ImageView img=(ImageView)findViewById(R.id.random_image);
-        //String[] imageArray = {"stimuli_set_1", "stimuli_set_2", "stimuli_set_3"};
-        //Random rand = new Random();
-        //int rndInt = rand.nextInt(2) + 1;
-        //int resID = getResources().getIdentifier(imageArray[rndInt], "drawable",  getPackageName());
-        //LayoutInflater inflater = getLayoutInflater();
-        //View checkboxLayout = inflater.inflate(resID, null);
-        //helpBuilder.setView(checkboxLayout);
-
-        helpBuilder.setPositiveButton("Close",
-                new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Do nothing but close the dialog
-                    }
-                });
-
-        // Remember, create doesn't show the dialog
-        AlertDialog helpDialog = helpBuilder.create();
-        helpDialog.show();
-    }
 
     @Override
     public void onBitmapGenerated(@NonNull final Bitmap bitmap) {
@@ -1111,6 +1090,20 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == SURVEY_REQUEST) {
+            if (resultCode == RESULT_OK) {
+
+                String answers_json = data.getExtras().getString("answers");
+                Log.d("****", "****************** WE HAVE ANSWERS ******************");
+                Log.v("ANSWERS JSON", answers_json);
+                Log.d("****", "*****************************************************");
+
+                //do whatever you want with them...
+            }
+        }
+    }
     /*public void AddData() {
         boolean isInserted = myDb.insertData(editName.getText().toString(),
                 editSurname.getText().toString(),

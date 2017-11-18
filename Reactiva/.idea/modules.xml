@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Reactiva.iml" filepath="$PROJECT_DIR$/Reactiva.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/surveylib/surveylib.iml" filepath="$PROJECT_DIR$/surveylib/surveylib.iml" />
     </modules>
   </component>
 </project>
