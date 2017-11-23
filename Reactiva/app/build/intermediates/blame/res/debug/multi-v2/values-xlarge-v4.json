@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/res/values-xlarge-v4/values-xlarge-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,126,197,267,337,405",
+                        "endColumns": "70,70,69,69,67,67",
+                        "endOffsets": "121,192,262,332,400,468"
+                    }
+                },
+                {
+                    "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/values-xlarge/dimens.xml",
+                    "from": {
+                        "startLines": "13,29,26,27,28,30,25,15,22,20,21,11,31,24,16,12,14,9,10,17,19,18,23",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "423,1289,1122,1177,1236,1345,1074,518,887,769,823,322,1398,1018,561,368,469,231,277,613,715,670,951",
+                        "endColumns": "45,55,54,58,52,52,47,42,63,53,63,45,59,55,51,54,48,45,44,56,53,44,66",
+                        "endOffsets": "464,1340,1172,1231,1284,1393,1117,556,946,818,882,363,1453,1069,608,418,513,272,317,665,764,710,1013"
+                    },
+                    "to": {
+                        "startLines": "8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "473,519,575,630,689,742,795,843,886,950,1004,1068,1114,1174,1230,1282,1337,1386,1432,1477,1534,1588,1633",
+                        "endColumns": "45,55,54,58,52,52,47,42,63,53,63,45,59,55,51,54,48,45,44,56,53,44,66",
+                        "endOffsets": "514,570,625,684,737,790,838,881,945,999,1063,1109,1169,1225,1277,1332,1381,1427,1472,1529,1583,1628,1695"
+                    }
+                }
+            ]
+        }
+    ]
+}

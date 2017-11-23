@@ -835,11 +835,12 @@ int id top 0x7f07009f
 int id topPanel 0x7f0700a0
 int id up 0x7f0700a1
 int id useLogo 0x7f0700a2
-int id video_holder 0x7f0700a3
-int id video_overlay 0x7f0700a4
-int id withText 0x7f0700a5
-int id wrap 0x7f0700a6
-int id wrap_content 0x7f0700a7
+int id videoView 0x7f0700a3
+int id video_holder 0x7f0700a4
+int id video_overlay 0x7f0700a5
+int id withText 0x7f0700a6
+int id wrap 0x7f0700a7
+int id wrap_content 0x7f0700a8
 int integer abc_config_activityDefaultDur 0x7f080000
 int integer abc_config_activityShortDur 0x7f080001
 int integer cancel_button_image_alpha 0x7f080002
