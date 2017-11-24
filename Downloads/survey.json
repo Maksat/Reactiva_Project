@@ -39,6 +39,8 @@
       "question_type": "String",
       "question_title": "You have some suggestions for improvement ?",
       "description": "",
+      "image": "kitten.png",
+      "video": "",
       "required": true
     },
     {
