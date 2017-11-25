@@ -2,6 +2,7 @@ package com.androidadvance.androidsurvey.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
@@ -37,6 +38,14 @@ public class Question implements Serializable {
     @SerializedName("number_of_lines")
     @Expose
     private Integer numberOfLines;
+    @SerializedName("image")
+    @Expose
+    private String questionImage;
+    @SerializedName("video")
+    @Expose
+    private String questionVideo;
+
+    private Answer answer;
 
     /**
      *
@@ -200,4 +209,39 @@ public class Question implements Serializable {
         this.numberOfLines = numberOfLines;
     }
 
+    /**
+     * @return The name of the image file to display in the question
+     */
+    public String getQuestionImage() {
+        return questionImage;
+    }
+
+    /**
+     * @param questionImage The name of the image file to display in the question
+     */
+    public void setQuestionImage(String questionImage) {
+        this.questionImage = questionImage;
+    }
+
+    /**
+     * @return The name of the video file to display in the question
+     */
+    public String getQuestionVideo() {
+        return questionVideo;
+    }
+
+    /**
+     * @param questionVideo The name of the video file to display in the question
+     */
+    public void setQuestionVideo(String questionVideo) {
+        this.questionVideo = questionVideo;
+    }
+
+    public Answer getAnswer() {
+        if(answer == null)
+        {
+            answer = new Answer();
+        }
+        return answer;
+    }
 }

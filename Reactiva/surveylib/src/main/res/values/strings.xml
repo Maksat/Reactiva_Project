@@ -4,4 +4,6 @@
     <string name="start">Start</string>
     <string name="close">Close</string>
     <string name="finish">Finish</string>
+    <string name="cancel">Cancel</string>
+    <string name="loading_survey">Loading latest survey from server</string>
 </resources>

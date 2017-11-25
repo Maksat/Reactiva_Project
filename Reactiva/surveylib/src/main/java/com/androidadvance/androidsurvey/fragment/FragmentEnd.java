@@ -13,10 +13,9 @@ import android.widget.TextView;
 import com.androidadvance.androidsurvey.Answers;
 import com.androidadvance.androidsurvey.ISurvey;
 import com.androidadvance.androidsurvey.R;
-import com.androidadvance.androidsurvey.SurveyActivity;
 import com.androidadvance.androidsurvey.models.SurveyProperties;
 
-public class FragmentEnd extends Fragment {
+public class FragmentEnd extends FragmentSurveyQuestion {
 
     private FragmentActivity mContext;
     private TextView textView_end;

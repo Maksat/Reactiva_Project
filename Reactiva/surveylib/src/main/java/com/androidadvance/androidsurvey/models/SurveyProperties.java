@@ -13,6 +13,12 @@ public class SurveyProperties implements Serializable {
     @SerializedName("intro_message")
     @Expose
     private String introMessage;
+    @SerializedName("intro_image")
+    @Expose
+    private String introImage;
+    @SerializedName("intro_video")
+    @Expose
+    private String introVideo;
     @SerializedName("end_message")
     @Expose
     private String endMessage;
@@ -76,4 +82,32 @@ public class SurveyProperties implements Serializable {
         this.skipIntro = skipIntro;
     }
 
+
+    /**
+     * @return The name of the image file to display on the intro page
+     */
+    public String getIntroImage() {
+        return introImage;
+    }
+
+    /**
+     * @param introImage The name of the image file to display on the intro page
+     */
+    public void setIntroImage(String introImage) {
+        this.introImage = introImage;
+    }
+
+    /**
+     * @return The name of the video file to display on the intro page
+     */
+    public String getIntroVideo() {
+        return introVideo;
+    }
+
+    /**
+     * @param introVideo The name of the video file to display on the intro page
+     */
+    public void setIntroVideo(String introVideo) {
+        this.introVideo = introVideo;
+    }
 }
