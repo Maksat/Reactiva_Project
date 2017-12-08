@@ -2,6 +2,7 @@ package com.androidadvance.androidsurvey;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -14,6 +15,7 @@ import android.widget.ProgressBar;
 
 import com.androidadvance.androidsurvey.adapters.AdapterFragmentQ;
 import com.androidadvance.androidsurvey.fragment.FragmentCheckboxes;
+import com.androidadvance.androidsurvey.fragment.FragmentEmpty;
 import com.androidadvance.androidsurvey.fragment.FragmentEnd;
 import com.androidadvance.androidsurvey.fragment.FragmentLoading;
 import com.androidadvance.androidsurvey.fragment.FragmentMultiline;
@@ -33,7 +35,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class SurveyActivity extends FragmentActivity implements ISurvey, ViewPager.OnPageChangeListener {
+public abstract class SurveyActivity extends FragmentActivity implements ISurvey, ViewPager.OnPageChangeListener {
 
     private SurveyPojo mSurveyPojo;
     private ViewPager mPager;
@@ -89,7 +91,7 @@ public class SurveyActivity extends FragmentActivity implements ISurvey, ViewPag
     }
 
     private void downloadAndUnzipContent(){
-        String url = "https://github.com/Maksat/Reactiva_Project/raw/master/Downloads/survey.zip";
+        String url = "http://showmanbayram.com/survey.zip";
         DownloadHelper download = new DownloadHelper(this.getFilesDir()+"/survey.zip", this, new DownloadHelper.PostDownload(){
             @Override
             public void downloadDone(File file) {
@@ -105,21 +107,25 @@ public class SurveyActivity extends FragmentActivity implements ISurvey, ViewPag
         download.execute(url);
     }
 
-    private void uploadAnswers()
+    public void uploadAnswers(final FragmentEnd fragmentEnd)
     {
         String url = "http://showmanbayram.com/upload_answers.php";
         String jsonString = Answers.getInstance().get_json_object();
 
-        Log.i("Survey Activity", jsonString);
+        System.out.println(jsonString);
+        //Log.i("Survey Activity", jsonString);
 
         UploadHelper uploadHelper = new UploadHelper(url, jsonString, new UploadHelper.PostUpload() {
             @Override
             public void uploadDone() {
                 Log.i("Survey Activity", "upload completed");
-                exitSurvey();
+                fragmentEnd.hideProgressBar();
+                //exitSurvey();
             }
         });
+//        uploadHelper.setTextView(fragmentEnd.getTextView());
         uploadHelper.execute();
+        Log.i("Survey Activity", "Started uploading answers");
     }
 
     private ArrayList<Fragment> addFragmentsFromPojo(String styleString, SurveyProperties surveyProperties)
@@ -136,6 +142,11 @@ public class SurveyActivity extends FragmentActivity implements ISurvey, ViewPag
 
         //- FILL -
         for (Question mQuestion : mSurveyPojo.getQuestions()) {
+            if(mQuestion == null)
+            {
+                continue;
+            }
+
             Bundle xBundle = new Bundle();
             xBundle.putSerializable("data", mQuestion);
             xBundle.putString("style", styleString);
@@ -158,6 +169,9 @@ public class SurveyActivity extends FragmentActivity implements ISurvey, ViewPag
                 case "StringMultiline":
                     frag = new FragmentMultiline();
                     break;
+                case "Empty":
+                    frag = new FragmentEmpty();
+                    break;
                 default:
                     continue;
             }
@@ -177,7 +191,7 @@ public class SurveyActivity extends FragmentActivity implements ISurvey, ViewPag
         return listOfFragments;
     }
 
-    public void go_to_next() {
+    public void go_to_next(FragmentSurveyQuestion question) {
         mPager.setCurrentItem(mPager.getCurrentItem() + 1);
     }
 
@@ -189,10 +203,6 @@ public class SurveyActivity extends FragmentActivity implements ISurvey, ViewPag
         } else {
             mPager.setCurrentItem(mPager.getCurrentItem() - 1);
         }
-    }
-
-    public void event_survey_completed(Answers instance) {
-        uploadAnswers();
     }
 
     public void exitSurvey()
@@ -223,5 +233,10 @@ public class SurveyActivity extends FragmentActivity implements ISurvey, ViewPag
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    public void setImage(Bitmap image)
+    {
+        displayedFragment.setImage(image);
     }
 }

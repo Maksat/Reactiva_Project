@@ -43,7 +43,7 @@ public class FragmentStart extends FragmentSurveyQuestion {
         button_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((ISurvey) mContext).go_to_next();
+                ((ISurvey) mContext).go_to_next(null);
             }
         });
 
@@ -67,9 +67,7 @@ public class FragmentStart extends FragmentSurveyQuestion {
     @Override
     public void setVideo() {
         String videoName = surveyProperties.getIntroVideo();
-        if(videoName != null && !videoName.equals("")) {
-            this.setVideo(videoName);
-        }
+        setVideo(videoName);
     }
 
     @Override

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml",
+            "outputFile": "/Users/maksat/Projects/Reactiva_Project/Reactiva/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
                     "source": "/Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/res/values-xlarge-v4/values-xlarge-v4.xml",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/values-xlarge/dimens.xml",
+                    "source": "/Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/res/values-xlarge/dimens.xml",
                     "from": {
                         "startLines": "13,29,26,27,28,30,25,15,22,20,21,11,31,24,16,12,14,9,10,17,19,18,23",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.androidadvance.androidsurvey.Answers;
@@ -19,6 +20,8 @@ public class FragmentEnd extends FragmentSurveyQuestion {
 
     private FragmentActivity mContext;
     private TextView textView_end;
+    private ProgressBar progressBar;
+    private FragmentEnd fragmentEnd;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,14 +32,15 @@ public class FragmentEnd extends FragmentSurveyQuestion {
 
         Button button_finish = (Button) rootView.findViewById(R.id.button_finish);
         textView_end = (TextView) rootView.findViewById(R.id.textView_end);
+        progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
 
-
+        fragmentEnd = this;
         button_finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                ((ISurvey) mContext).event_survey_completed(Answers.getInstance());
-
+                ((ISurvey) mContext).event_survey_completed(Answers.getInstance(), fragmentEnd);
+                progressBar.setVisibility(View.VISIBLE);
             }
         });
 
@@ -53,5 +57,16 @@ public class FragmentEnd extends FragmentSurveyQuestion {
         assert survery_properties != null;
         textView_end.setText(Html.fromHtml(survery_properties.getEndMessage()));
 
+    }
+
+    public void hideProgressBar()
+    {
+        progressBar.setVisibility(View.INVISIBLE);
+        textView_end.setText("Survey results were uploaded to the server!");
+    }
+
+    public TextView getTextView()
+    {
+        return textView_end;
     }
 }

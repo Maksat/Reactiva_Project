@@ -397,34 +397,39 @@ public class DrawingView extends SurfaceView implements SurfaceHolder.Callback {
                  * After we are done drawing, we let go of the canvas using SurfaceHolder.unlockCanvasAndPost()
                  * **/
                 Canvas c = null;
-                Canvas screenshotCanvas = null;
+//                Canvas screenshotCanvas = null;
                 Bitmap screenshotBitmap = null;
                 try {
-                    c = mSurfaceHolder.lockCanvas();
+//                    c = mSurfaceHolder.lockCanvas();
 
                     if (requestCaptureBitmap) {
                         Rect surfaceBounds = mSurfaceHolder.getSurfaceFrame();
                         screenshotBitmap = Bitmap.createBitmap(surfaceBounds.width(), surfaceBounds.height(), Bitmap.Config.ARGB_8888);
-                        screenshotCanvas = new Canvas(screenshotBitmap);
+//                        screenshotCanvas = new Canvas(screenshotBitmap);
                         requestCaptureBitmap = false;
                     }
 
-                    if (c != null) {
-                        synchronized (mSurfaceHolder) {
-                            c.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR); //clear previous dots
-                            draw(c, screenshotCanvas);
-                        }
-                    }
+//                    if (c != null) {
+//                        synchronized (mSurfaceHolder) {
+//                            c.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR); //clear previous dots
+//                            draw(c, screenshotCanvas);
+//                        }
+//                    }
 
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 } finally {
+                    Log.i(LOG_TAG, "Almost calling onBitmapGenerated");
                     if (c != null) {
-                        mSurfaceHolder.unlockCanvasAndPost(c);
+//                        mSurfaceHolder.unlockCanvasAndPost(c);
                     }
                     if (screenshotBitmap != null && listener != null) {
                         listener.onBitmapGenerated(Bitmap.createBitmap(screenshotBitmap));
                         screenshotBitmap.recycle();
                     }
                 }
+
             }
 
             config = null; //nullify object to avoid memory leak

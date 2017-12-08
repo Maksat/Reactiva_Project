@@ -21,7 +21,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -46,13 +48,20 @@ import com.affectiva.android.affdex.sdk.Frame;
 import com.affectiva.android.affdex.sdk.detector.CameraDetector;
 import com.affectiva.android.affdex.sdk.detector.Detector;
 import com.affectiva.android.affdex.sdk.detector.Face;
+import com.androidadvance.androidsurvey.Answers;
 import com.androidadvance.androidsurvey.SurveyActivity;
+import com.androidadvance.androidsurvey.UploadHelper;
+import com.androidadvance.androidsurvey.fragment.FragmentEnd;
+import com.androidadvance.androidsurvey.fragment.FragmentSurveyQuestion;
+import com.androidadvance.androidsurvey.models.Emotion;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -76,7 +85,6 @@ public class MainActivity extends SurveyActivity
     private boolean storagePermissionsAvailable = false;
     private CameraDetector detector = null;
     private RelativeLayout metricViewLayout;
-    private ViewPager surveyPager;
     private LinearLayout leftMetricsLayout;
     private LinearLayout rightMetricsLayout;
     private MetricDisplay[] metricDisplays;
@@ -85,7 +93,7 @@ public class MainActivity extends SurveyActivity
     private TextView fpsPct;
     private TextView pleaseWaitTextView;
     private ProgressBar progressBar;
-    private RelativeLayout mainLayout; //layout, to be resized, containing all UI elements
+    private ConstraintLayout mainLayout; //layout, to be resized, containing all UI elements
     private RelativeLayout progressBarLayout; //layout used to show progress circle while camera is starting
     private LinearLayout permissionsUnavailableLayout; //layout used to notify the user that not enough permissions have been granted to use the app
     private CameraView cameraView; //SurfaceView used to display camera images
@@ -93,6 +101,7 @@ public class MainActivity extends SurveyActivity
     private ImageButton settingsButton;
     private ImageButton cameraButton;
     private Frame mostRecentFrame;
+    private FragmentEnd fragmentEnd;
     private boolean isCameraVisible = false;
     private boolean isMenuVisible = false;
     private boolean isFPSVisible = false;
@@ -103,11 +112,18 @@ public class MainActivity extends SurveyActivity
     private boolean isFrontFacingCameraDetected = true;
     private boolean isBackFacingCameraDetected = true;
     private boolean multiFaceModeEnabled = false;
-    private DatabaseHelper myDb;
+
+    private long metricNumber = 0;
+
+    private float currentEmotionScore;
+
+    private HashMap<Long, Emotion> emotions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        emotions = new HashMap<>();
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN); //To maximize UI space, we declare our app to be full-screen
         preproccessMetricImages();
         setContentView(R.layout.activity_main);
@@ -115,7 +131,7 @@ public class MainActivity extends SurveyActivity
         checkForCameraPermissions();
         determineCameraAvailability();
         initializeCameraDetector();
-        initializePager();
+        downloadSurvey();
     }
 
     /**
@@ -240,12 +256,37 @@ public class MainActivity extends SurveyActivity
                 }
             }
 
-//            if (storagePermissionsAvailable) {
-//                // resume taking the screenshot
-//
-//            }
+            if (storagePermissionsAvailable) {
+                // resume taking the screenshot
+//                takeScreenshot();
+            }
         }
 
+    }
+
+    @Override
+    public void go_to_next(FragmentSurveyQuestion question) {
+
+        if(question != null) {
+            Date now = new Date();
+            String timestamp = DateFormat.format("yyyy-MM-dd_hh-mm-ss", now).toString();
+            String screenshotFileName = timestamp + ".png";
+            Bitmap bitmap = takeScreenshot(screenshotFileName);
+            question.getQuestion().getAnswer().setImageName(screenshotFileName);
+            question.getQuestion().getAnswer().setScreenshotImage(bitmap);
+        }
+        super.go_to_next(question);
+    }
+
+    public Bitmap takeScreenshot(String screenshotFileName) {
+        Log.i("Main Activity", "startedTakingScreenshot");
+        Bitmap bitmap = ImageHelper.getBitmapFromFrame(mostRecentFrame);
+        processScreenshot(bitmap, screenshotFileName);
+        return  bitmap;
+        /**
+         * A screenshot of the drawing view is generated and processing continues via the callback
+         * onBitmapGenerated() which calls processScreenshot().
+         */
     }
 
     private void showPermissionExplanationDialog(int requestCode) {
@@ -323,10 +364,9 @@ public class MainActivity extends SurveyActivity
         progressBarLayout = (RelativeLayout) findViewById(R.id.progress_bar_cover);
         permissionsUnavailableLayout = (LinearLayout) findViewById(R.id.permissionsUnavialableLayout);
         metricViewLayout = (RelativeLayout) findViewById(R.id.metric_view_group);
-        surveyPager = (ViewPager) findViewById(R.id.pager);
         leftMetricsLayout = (LinearLayout) findViewById(R.id.left_metrics);
         rightMetricsLayout = (LinearLayout) findViewById(R.id.right_metrics);
-        mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
+        mainLayout = (ConstraintLayout) findViewById(R.id.main_layout);
         fpsPct = (TextView) findViewById(R.id.fps_value);
         fpsName = (TextView) findViewById(R.id.fps_name);
         cameraView = (CameraView) findViewById(R.id.camera_preview);
@@ -353,8 +393,6 @@ public class MainActivity extends SurveyActivity
         metricDisplays[4] = (MetricDisplay) findViewById(R.id.metric_pct_4);
         metricDisplays[5] = (MetricDisplay) findViewById(R.id.metric_pct_5);
 
-        //Initialize SQLite database to store data
-        myDb = new DatabaseHelper(this);
 
         //Load Application Font and set UI Elements to use it
         Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Square.ttf");
@@ -677,10 +715,14 @@ public class MainActivity extends SurveyActivity
         } else if (faces.size() == 1) {
             metricViewLayout.setVisibility(View.VISIBLE);
 
+            metricNumber ++;
+
             //update metrics with latest face information. The metrics are displayed on a MetricView, a custom view with a .setScore() method.
             for (MetricDisplay metricDisplay : metricDisplays) {
                 updateMetricScore(metricDisplay, faces.get(0));
             }
+            drawingView.requestBitmap();
+
 
             /*
              * If the user has selected to have any facial attributes drawn, we use face.getFacePoints() to send those points
@@ -701,87 +743,18 @@ public class MainActivity extends SurveyActivity
     }
 
 
-    private void processScreenshot(Bitmap drawingViewBitmap, boolean alsoSaveRaw) {
-        if (mostRecentFrame == null) {
-            Toast.makeText(getApplicationContext(), "No frame detected, aborting screenshot", Toast.LENGTH_SHORT).show();
-            return;
-        }
+    private void processScreenshot(Bitmap bitmap, String screenshotFileName) {
+        Log.i("Main Activity", "started processing screenshot");
+        String url = "http://showmanbayram.com/upload_image.php";
 
-        if (!storagePermissionsAvailable) {
-            checkForStoragePermissions();
-            return;
-        }
-
-        Bitmap faceBitmap = ImageHelper.getBitmapFromFrame(mostRecentFrame);
-
-        if (faceBitmap == null) {
-            Log.e(LOG_TAG, "Unable to generate bitmap for frame, aborting screenshot");
-            return;
-        }
-
-        metricViewLayout.setDrawingCacheEnabled(true);
-        Bitmap metricsBitmap = Bitmap.createBitmap(metricViewLayout.getDrawingCache());
-        metricViewLayout.setDrawingCacheEnabled(false);
-
-        Bitmap finalScreenshot = Bitmap.createBitmap(faceBitmap.getWidth(), faceBitmap.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(finalScreenshot);
-        Paint paint = new Paint(Paint.FILTER_BITMAP_FLAG);
-
-        canvas.drawBitmap(faceBitmap, 0, 0, paint);
-
-        float scaleFactor = ((float) faceBitmap.getWidth()) / ((float) drawingViewBitmap.getWidth());
-        int scaledHeight = Math.round(drawingViewBitmap.getHeight() * scaleFactor);
-        canvas.drawBitmap(drawingViewBitmap, null, new Rect(0, 0, faceBitmap.getWidth(), scaledHeight), paint);
-
-        scaleFactor = ((float) faceBitmap.getWidth()) / ((float) metricsBitmap.getWidth());
-        scaledHeight = Math.round(metricsBitmap.getHeight() * scaleFactor);
-        canvas.drawBitmap(metricsBitmap, null, new Rect(0, 0, faceBitmap.getWidth(), scaledHeight), paint);
-
-        metricsBitmap.recycle();
-        drawingViewBitmap.recycle();
-
-        Date now = new Date();
-        String timestamp = DateFormat.format("yyyy-MM-dd_hh-mm-ss", now).toString();
-        File pictureFolder = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Reactiva");
-        if (!pictureFolder.exists()) {
-            if (!pictureFolder.mkdir()) {
-                Log.e(LOG_TAG, "Unable to create directory: " + pictureFolder.getAbsolutePath());
-                return;
+        UploadHelper uploadHelper = new UploadHelper(bitmap, url, screenshotFileName, new UploadHelper.PostUpload() {
+            @Override
+            public void uploadDone() {
+                Log.i("Main Activity", "image upload completed");
             }
-        }
-
-        String screenshotFileName = timestamp + ".png";
-        File screenshotFile = new File(pictureFolder, screenshotFileName);
-
-        try {
-            ImageHelper.saveBitmapToFileAsPng(finalScreenshot, screenshotFile);
-        } catch (IOException e) {
-            String msg = "Unable to save screenshot";
-            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-            Log.e(LOG_TAG, msg, e);
-            return;
-        }
-        ImageHelper.addPngToGallery(getApplicationContext(), screenshotFile);
-
-        if (alsoSaveRaw) {
-            String rawScreenshotFileName = timestamp + "_raw.png";
-            File rawScreenshotFile = new File(pictureFolder, rawScreenshotFileName);
-
-            try {
-                ImageHelper.saveBitmapToFileAsPng(faceBitmap, rawScreenshotFile);
-            } catch (IOException e) {
-                String msg = "Unable to save screenshot";
-                Log.e(LOG_TAG, msg, e);
-            }
-            ImageHelper.addPngToGallery(getApplicationContext(), rawScreenshotFile);
-        }
-
-        faceBitmap.recycle();
-        finalScreenshot.recycle();
-
-        String fileSavedMessage = "Screenshot saved to: " + screenshotFile.getPath();
-        Toast.makeText(getApplicationContext(), fileSavedMessage, Toast.LENGTH_SHORT).show();
-        Log.d(LOG_TAG, fileSavedMessage);
+        });
+//        uploadHelper.setTextView(fragmentEnd.getTextView());
+        uploadHelper.execute();
     }
 
     /**
@@ -796,9 +769,53 @@ public class MainActivity extends SurveyActivity
             switch (metric.getType()) {
                 case Emotion:
                     score = (Float) metricDisplay.getFaceScoreMethod().invoke(face.emotions);
-                    if(score >= 20)
+                    if(score != currentEmotionScore && (score > 1 || score < -1))
                     {
-                        ServerHelper.postData(((MetricsManager.Emotions)metric).ordinal(), score, 0);
+                        currentEmotionScore = score;
+
+                        Emotion emotion;
+
+                        if(emotions.containsKey(metricNumber)) {
+                            emotion = emotions.get(metricNumber);
+                        }else
+                        {
+                            emotion = new Emotion();
+                        }
+                        emotion.setEmotionId(((MetricsManager.Emotions) metric).ordinal());
+                        emotion.setScore(score);
+                        emotion.setTime(Calendar.getInstance().getTime());
+
+                        if(metric == MetricsManager.Emotions.VALENCE)
+                        {
+                            emotion.setValence(score);
+                        }else if(metric == MetricsManager.Emotions.ENGAGEMENT)
+                        {
+                            emotion.setArousal(score);
+                        }else if(metric == MetricsManager.Emotions.DISGUST)
+                        {
+                            emotion.setDisgust(score);
+                        }else if(metric == MetricsManager.Emotions.FEAR)
+                        {
+                            emotion.setFear(score);
+                        }else if(metric == MetricsManager.Emotions.JOY)
+                        {
+                            emotion.setJoy(score);
+                        }else if(metric == MetricsManager.Emotions.SADNESS)
+                        {
+                            emotion.setSadness(score);
+                        }else if(metric == MetricsManager.Emotions.SURPRISE)
+                        {
+                            emotion.setSurprise(score);
+                        }else if(metric == MetricsManager.Emotions.CONTEMPT)
+                        {
+                            emotion.setContempt(score);
+                        }
+
+
+                        emotions.put(metricNumber, emotion);
+
+                        Answers.getInstance().addEmotion(emotion);
+                        //ServerHelper.postData(((MetricsManager.Emotions)metric).ordinal(), score, 0);
                     }
                     break;
                 case Expression:
@@ -814,6 +831,11 @@ public class MainActivity extends SurveyActivity
             Log.e(LOG_TAG, String.format("Error using reflecting to get %s score from face.", metric.toString()));
         }
         metricDisplay.setScore(score);
+    }
+
+    public void event_survey_completed(Answers instance, FragmentEnd fragmentEnd) {
+        this.fragmentEnd = fragmentEnd;
+        uploadAnswers(fragmentEnd);
     }
 
     /**
@@ -989,7 +1011,8 @@ public class MainActivity extends SurveyActivity
     @SuppressWarnings("SuspiciousNameCombination")
     @Override
     public void onCameraSizeSelected(int cameraWidth, int cameraHeight, Frame.ROTATE rotation) {
-        if (rotation == Frame.ROTATE.BY_90_CCW || rotation == Frame.ROTATE.BY_90_CW) {
+        return;
+        /*if (rotation == Frame.ROTATE.BY_90_CCW || rotation == Frame.ROTATE.BY_90_CW) {
             cameraPreviewWidth = cameraHeight;
             cameraPreviewHeight = cameraWidth;
         } else {
@@ -1036,7 +1059,7 @@ public class MainActivity extends SurveyActivity
                 progressBarLayout.setVisibility(View.GONE);
             }
         });
-
+*/
     }
 
     public void camera_button_click(View view) {
@@ -1082,10 +1105,11 @@ public class MainActivity extends SurveyActivity
 
     @Override
     public void onBitmapGenerated(@NonNull final Bitmap bitmap) {
+        Log.i("Main Activity", "bitmap generated");
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                processScreenshot(bitmap, STORE_RAW_SCREENSHOTS);
+//                processScreenshot(bitmap);
             }
         });
     }
@@ -1103,14 +1127,6 @@ public class MainActivity extends SurveyActivity
                 //do whatever you want with them...
             }
         }
-    }
-    /*public void AddData() {
-        boolean isInserted = myDb.insertData(editName.getText().toString(),
-                editSurname.getText().toString(),
-                editGrade.getText().toString());
-        if (isInserted)
-            Toast.makeText(MainActivity.this, "Data Inserted", Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(MainActivity.this, "Data Not Inserted", Toast.LENGTH_LONG).show(); */
 
+    }
 }

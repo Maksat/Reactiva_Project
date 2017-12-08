@@ -240,6 +240,7 @@ public class ImageHelper {
         }
 
         if (bitmap == null || frame.getTargetRotation().toDouble() == 0.0) {
+            Log.i("Image helper", "bitmap is null");
             return bitmap;
         } else {
             return rotateBitmap(bitmap, (float) frame.getTargetRotation().toDouble());

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kk-rKZ/values-kk-rKZ.xml",
+            "outputFile": "/Users/maksat/Projects/Reactiva_Project/Reactiva/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kk-rKZ/values-kk-rKZ.xml",
             "map": [
                 {
                     "source": "/Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/res/values-kk-rKZ/values-kk-rKZ.xml",

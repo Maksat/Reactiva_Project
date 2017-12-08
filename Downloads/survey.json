@@ -1,60 +1,225 @@
 {
   "survey_properties": {
-    "intro_message": "<strong>Your feedback helps us to build a better mobile product.</strong>",
-    "intro_image": "kitten.png",
-    "intro_video": "joy.mp4",
+    "intro_message": "<strong>The primary purpose of the current research was to compare the SCF risk measure and the GL-RTS.</strong>",
+    "intro_image": "",
+    "intro_video": "",
     "end_message": "Thank you for having the time to take our survey.",
     "skip_intro": false
   },
   "questions": [
+    
+    {
+      "question_type": "Empty",
+      "question_title": "",
+      "description": "",
+      "image": "target.png",
+      "video": "",
+      "seconds_to_next_question": 5
+    },
     {
       "question_type": "Radioboxes",
-      "question_title": "How appreciated did your supervisor make you feel?",
+      "question_title": "In general, how would your best friend describe you as a risk taker?",
       "description": "",
       "image": "",
-      "video": "lip_press.mp4",
+      "video": "",
       "required": true,
       "random_choices": false,
       "choices": [
-        "Very appreciated",
-        "Moderately appreciated",
-        "Not at all appreciated"
+        "A real gambler",
+        "Willing to take risks after completing adequate research",
+        "Cautious",
+        "A real risk avoider"
       ]
     },
     {
       "question_type": "Radioboxes",
-      "question_title": "How easy was it to get along with the other colleagues at this organization?",
+      "question_title": "You are on a TV game show and can choose one of the following. Which would you take?",
       "description": "",
-      "image": "kitten.png",
+      "image": "",
       "video": "",
       "required": true,
-      "random_choices": true,
+      "random_choices": false,
       "choices": [
-        "<font color='#880000'>Very hard</font>",
-        "<font color='#008800'>Very easy</font>",
-        "<font color='#000088'>So and so :)</font>"
+        "$1,000 in cash",
+        "A 50% chance at winning $5,000",
+        "A 25% chance at winning $10,000",
+        "A 5% chance at winning $100,000"
       ]
     },
     {
-      "question_type": "String",
-      "question_title": "You have some suggestions for improvement ?",
+      "question_type": "Radioboxes",
+      "question_title": "You have just finished saving for a 'once-in-a-lifetime' vacation. Three weeks before you plan to leave, you lose your job. You would:",
       "description": "",
-      "image": "kitten.png",
+      "image": "",
       "video": "",
-      "required": true
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Cancel the vacation",
+        "Take a much more modest vacation",
+        "Go as scheduled, reasoning that you need the time to prepare for a job search",
+        "Extend your vacation, because this might be your last chance to go first-class"
+      ]
     },
+
     {
-      "question_title": "How much you spend per coffee every day ?",
+      "question_type": "Radioboxes",
+      "question_title": "If you unexpectedly received $20,000 to invest, what would you do?",
       "description": "",
-      "required": false,
-      "question_type": "Number"
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Deposit it in a bank account, money market account, or an insured CD",
+        "Invest it in safe high-quality bonds or bond mutual funds",
+        "Invest it in stocks or stock mutual funds"
+      ]
     },
     {
-      "question_type": "StringMultiline",
-      "question_title": "Do you have any other comments you'd like us to know ?",
-      "description": "Requests, problems etc.",
-      "required": false,
-      "number_of_lines": 4
-    }
+      "question_type": "Radioboxes",
+      "question_title": "In terms of experience, how comfortable are you investing in stocks or stock mutual funds?",
+      "description": "",
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Not at all comfortable",
+        "Somewhat comfortable",
+        "Very comfortable"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "When you think of the word 'risk', which of the following words comes to mind first?",
+      "description": "",
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Loss",
+        "Uncertainty",
+        "Opportunity",
+        "Thrill"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "Some experts are predicting prices of assets such as gold, jewels, collectibles, and real estate (hard assets) to increase in value. Bond prices may fall; however, experts tend to agree that government bonds are relatively safe. Most of your investment assets are now in high-interest government bonds. What would you do?",
+      "description": "",
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Hold the bonds",
+        "Sell the bonds, put half the proceeds into money market accounts, and the other half into hard assets",
+        "Sell the bonds and put the total proceeds into hard assets",
+        "Sell the bonds, put all the money into hard assets, and borrow additional money to buy more"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "Given the best and worst case returns of the four investment choices below, which would you prefer?",
+      "description": "",
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "$200 gain best case; $0 gain/loss worst case",
+        "$800 gain best case; $200 loss worst case",
+        "$2,600 gain best case; $800 loss worst case",
+        "$4,800 gain best case; $2,400 loss worst case"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "In addition to whatever you own, you have been given $1,000. You are now asked to choose between:",
+      "description": "",
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "A sure gain of $500",
+        "A 50% chance to gain $1,000 and a 50% chance to gain nothing"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "In addition to whatever you own, you have been given $2,000. You are now asked to choose between:",
+      "description": "",
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "A sure loss of $500",
+        "A 50% chance to lose $1,000 and a 50% chance to lose nothing"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "Suppose a relative left you an inheritance of $100,000, stipulating in the will that you invest ALL the money in ONE of the following choices. Which one would you select?",
+      "description": "",
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "A savings account or money market mutual fund",
+        "A mutual fund that owns stocks and bonds",
+        "A portfolio of 15 common stocks",
+        "Commodities like gold, silver, and oil"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "If you had to invest $20,000, which of the following investment choices would you find most appealing?",
+      "description": "",
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "60% in low-risk investments, 30% in medium-risk investments, 10% in high-risk investments",
+        "30% in low-risk investments, 40% in medium-risk investments, 30% in high-risk investments",
+        "10% in low-risk investments, 40% in medium-risk investments, 50% in high-risk investments"
+      ]
+    },
+    {
+      "question_type": "Radioboxes",
+      "question_title": "Your trusted friend and neighbor, an experienced geologist, is putting together a group of investors to fund an exploratory gold mining venture. The venture could pay back 50 to 100 times the investment if successful. If the mine is a bust, the entire investment is worthless. Your friend estimates the chance of success is only 20%. If you had the money, how much would you invest?",
+      "description": "",
+      "image": "",
+      "video": "",
+      "required": true,
+      "random_choices": false,
+      "choices": [
+        "Nothing",
+        "One month’s salary",
+        "Three month’s salary",
+        "Six month’s salary"
+      ]
+    },
+    {
+      "question_type": "Empty",
+      "question_title": "",
+      "description": "",
+      "image": "n2.bmp",
+      "video": "",
+      "seconds_to_next_question": 2
+    },
+    {
+      "question_type": "Empty",
+      "question_title": "",
+      "description": "",
+      "image": "n1.bmp",
+      "video": "",
+      "seconds_to_next_question": 2
+    },
   ]
 }

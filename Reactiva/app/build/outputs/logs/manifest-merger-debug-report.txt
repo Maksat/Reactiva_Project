@@ -1,11 +1,11 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
 MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:2:1-19:12
-MERGED from [:surveylib] /Users/maksat/Documents/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-17:12
+MERGED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-19:12
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-v4:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/97bb6afa78ed07da8f09a74bf2182cfa/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/2e0eb6eb78708c101eda4fafc5fe558b/AndroidManifest.xml:2:1-11:12
@@ -16,69 +16,71 @@ MERGED from [com.android.support:support-core-ui:25.3.1] /Users/maksat/.gradle/c
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/0ee001e1a22a58d5587d2c7c588c5704/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/256ae88964e19af46fba1e3a7e553259/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-compat:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/8b4766091814180ac07cabdab5e41838/AndroidManifest.xml:17:1-31:12
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
 	package
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:4:5-33
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:4:5-33
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:1-60:12
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.CAMERA
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:6:5-65
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:6:5-65
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:6:22-62
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:6:22-62
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:7:5-81
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:7:5-81
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:7:22-78
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:7:22-78
 uses-permission#android.permission.INTERNET
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:8:5-66
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:8:5-66
 MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:11:5-67
 MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:11:5-67
+MERGED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-67
+MERGED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:8:22-64
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:8:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:9:5-78
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:9:5-78
 MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:12:5-79
 MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:9:22-76
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:9:22-76
 uses-feature#android.hardware.camera
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:11:5-13:36
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:11:5-13:36
 	android:required
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:13:9-33
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:13:9-33
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:12:9-47
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:12:9-47
 uses-feature#android.hardware.camera.autofocus
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:14:5-16:36
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:14:5-16:36
 	android:required
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:16:9-33
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:16:9-33
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:15:9-57
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:15:9-57
 uses-feature#android.hardware.camera.front
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:17:5-19:36
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:17:5-19:36
 	android:required
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:19:9-33
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:19:9-33
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:18:9-53
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:18:9-53
 application
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:21:5-59:19
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:21:5-59:19
 MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:14:5-17:19
 MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:14:5-17:19
-MERGED from [:surveylib] /Users/maksat/Documents/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-15:19
-MERGED from [:surveylib] /Users/maksat/Documents/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-15:19
+MERGED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-17:19
+MERGED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-17:19
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/97bb6afa78ed07da8f09a74bf2182cfa/AndroidManifest.xml:29:5-20
@@ -100,91 +102,91 @@ MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maksat/.
 MERGED from [com.android.support:support-compat:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/8b4766091814180ac07cabdab5e41838/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/8b4766091814180ac07cabdab5e41838/AndroidManifest.xml:29:5-20
 	android:supportsRtl
-		ADDED from [:surveylib] /Users/maksat/Documents/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:9-35
+		ADDED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:27:9-41
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:27:9-41
 		REJECTED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:16:9-47
-		REJECTED from [:surveylib] /Users/maksat/Documents/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:9-41
+		REJECTED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:9-41
 	android:hardwareAccelerated
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:25:9-43
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:25:9-43
 	android:icon
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:26:9-43
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:26:9-43
 	android:allowBackup
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:24:9-36
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:24:9-36
 		REJECTED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:15:9-35
-		REJECTED from [:surveylib] /Users/maksat/Documents/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:9-35
+		REJECTED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:9-35
 	tools:replace
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:22:9-58
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:22:9-58
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:23:9-66
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:23:9-66
 activity#com.nanxi.reactiva.MainActivity
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:28:9-37:20
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:28:9-37:20
 	android:label
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:31:13-45
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:31:13-45
 	android:configChanges
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:30:13-74
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:30:13-74
 	android:theme
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:32:13-53
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:32:13-53
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:29:13-41
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:29:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:33:13-36:29
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:33:13-36:29
 action#android.intent.action.MAIN
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:34:17-69
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:34:25-66
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:35:17-77
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:35:17-77
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:35:27-74
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:35:27-74
 activity#com.nanxi.reactiva.SettingsActivity
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:38:9-45:20
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:38:9-45:20
 	android:parentActivityName
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:40:13-55
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:40:13-55
 	android:theme
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:41:13-56
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:41:13-56
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:39:13-45
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:39:13-45
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:42:13-44:67
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:42:13-44:67
 	android:value
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:44:17-64
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:44:17-64
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:43:17-63
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:43:17-63
 activity#com.nanxi.errorreporting.ErrorReporter
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:46:9-54:20
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:46:9-54:20
 	android:textAppearance
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:48:13-73
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:48:13-73
 	android:theme
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:49:13-63
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:49:13-63
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:47:13-66
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:47:13-66
 intent-filter#android.intent.category.DEFAULT+com.affectiva.REPORT_ERROR
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:50:13-53:29
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:50:13-53:29
 action#com.affectiva.REPORT_ERROR
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:51:17-69
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:51:17-69
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:51:25-66
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:51:25-66
 category#android.intent.category.DEFAULT
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:52:17-76
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:52:17-76
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:52:27-73
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:52:27-73
 activity#com.androidadvance.androidsurvey.SurveyActivity
-ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:56:9-58:56
+ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:56:9-58:56
 	android:windowSoftInputMode
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:58:13-54
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:58:13-54
 	android:configChanges
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:57:13-122
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:57:13-122
 	android:name
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:56:19-81
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml:56:19-81
 uses-sdk
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
 MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:7:5-9:41
 MERGED from [com.affectiva.android:affdexsdk:3.2] /Users/maksat/.gradle/caches/transforms-1/files-1.1/affdexsdk-3.2.aar/fbb56332d1dff2bb0e64834f30d75d0c/AndroidManifest.xml:7:5-9:41
-MERGED from [:surveylib] /Users/maksat/Documents/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:surveylib] /Users/maksat/Documents/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:surveylib] /Users/maksat/Projects/Reactiva_Project/Reactiva/surveylib/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/97bb6afa78ed07da8f09a74bf2182cfa/AndroidManifest.xml:21:5-23:54
@@ -205,18 +207,18 @@ MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maksat/.
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/256ae88964e19af46fba1e3a7e553259/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-compat:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/8b4766091814180ac07cabdab5e41838/AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/8b4766091814180ac07cabdab5e41838/AndroidManifest.xml:21:5-23:58
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
-INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
-		ADDED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		ADDED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
 ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/cd35e99008085b92924038b2bf2cf91a/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-v4:25.3.1] /Users/maksat/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/97bb6afa78ed07da8f09a74bf2182cfa/AndroidManifest.xml:25:5-27:34

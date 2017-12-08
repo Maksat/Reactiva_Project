@@ -44,6 +44,10 @@ public class Question implements Serializable {
     @SerializedName("video")
     @Expose
     private String questionVideo;
+    @SerializedName("seconds_to_next_question")
+    @Expose
+    private Integer timeToNextQuestion;
+
 
     private Answer answer;
 
@@ -243,5 +247,19 @@ public class Question implements Serializable {
             answer = new Answer();
         }
         return answer;
+    }
+
+    /**
+     * @return If < 0 does nothing, if above shows when next question starts in seconds
+     */
+    public Integer getTimeToNextQuestion() {
+        return timeToNextQuestion;
+    }
+
+    /**
+     * @param timeToNextQuestion If < 0 does nothing, if above shows when next question starts in seconds
+     */
+    public void setTimeToNextQuestion(Integer timeToNextQuestion) {
+        this.timeToNextQuestion = timeToNextQuestion;
     }
 }

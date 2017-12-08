@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
+            "outputFile": "/Users/maksat/Projects/Reactiva_Project/Reactiva/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "/Users/maksat/Documents/Reactiva_Project/Reactiva/app/src/main/res/values-small/dimens.xml",
+                    "source": "/Users/maksat/Projects/Reactiva_Project/Reactiva/app/src/main/res/values-small/dimens.xml",
                     "from": {
                         "startLines": "12,28,20,19,27,29,25,14,23,21,22,10,30,26,15,11,13,8,9,16,18,17,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
@@ -32,19 +32,7 @@
         android:id="@+id/metric_view_group"
         layout="@layout/metric_layout" />
 
-    <ImageButton
-        android:id="@+id/settings_button"
-        android:layout_width="@dimen/settings_button_size"
-        android:layout_height="@dimen/settings_button_size"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/metric_view_group"
-        android:layout_margin="@dimen/settings_button_margin"
-        android:background="@null"
-        android:contentDescription="@string/settings_content_description"
-        android:onClick="settings_button_click"
-        android:scaleType="fitCenter"
-        android:src="@drawable/settings_button_selector" />
-
+    <include layout="@layout/insufficent_permissions_panel" />
     <ImageButton
         android:id="@+id/camera_button"
         android:layout_width="@dimen/settings_button_size"
@@ -57,9 +45,6 @@
         android:onClick="camera_button_click"
         android:scaleType="fitCenter"
         android:src="@drawable/camera_button_selector" />
-
-    <include layout="@layout/insufficent_permissions_panel" />
-
 
 
     <RelativeLayout
@@ -104,8 +89,28 @@
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:visibility="visible" />
+        android:visibility="visible"
 
-</RelativeLayout>
+        layout_constraintBottom_toBottomOf="parent"
+        layout_constraintLeft_toLeftOf="parent"
+        layout_constraintRight_toRightOf="parent"
+        layout_constraintTop_toTopOf="parent"
+        android:background="#CCCCCC"
+        />
+
+    <ImageButton
+        android:id="@+id/settings_button"
+        android:layout_width="@dimen/settings_button_size"
+        android:layout_height="@dimen/settings_button_size"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/metric_view_group"
+        android:layout_margin="@dimen/settings_button_margin"
+        android:background="@null"
+        android:contentDescription="@string/settings_content_description"
+        android:onClick="settings_button_click"
+        android:scaleType="fitCenter"
+        android:src="@drawable/settings_button_selector" />
+
+
+</android.support.constraint.ConstraintLayout>
 
